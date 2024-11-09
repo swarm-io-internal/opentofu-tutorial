@@ -9,11 +9,11 @@ terraform {
 }
 
 provider "aws" {
-  region = "us-west-2" # Oregon servers
+  region = "us-east-1" # Virginia servers
 }
 
 # Create a t2.micro EC2 instance
-resource "aws_instance" "tutorial_instance" {
+resource "aws_instance" "tutorial_instance" { # Note that the ami-0b72821e2f351e396 image is NOT available in west regions
   ami           = "ami-0b72821e2f351e396" # Amazon Machine Image (AMI); https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html
   instance_type = "t2.micro" # EC2 Instance; https://aws.amazon.com/ec2/instance-types/
 
